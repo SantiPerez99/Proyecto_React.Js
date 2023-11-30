@@ -12,9 +12,11 @@ function App() {
   
 
   return (
-    <>
+    <>     
      <Navbar />
+     
      <ItemListcontainer />
+     
     </>
   )
 }

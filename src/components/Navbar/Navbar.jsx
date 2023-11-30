@@ -6,22 +6,29 @@ import CartWidget from '../CartWidget/CartWidget'
 const Navbar = () => {
 
     return(
-            
-        <header className="bg-gray-600">
-            <div className="container m-auto py-6 flex justify-center items-center">
+        <div className='relative'>
+            <CartWidget />
+        
+            <header className="bg-gray-600">
                 
-                <img className='Imagen__Logo' src={logo} alt="Logo" />
+                <div className="container m-auto py-6 flex justify-center items-center">
+                    
+                    <img className='Imagen__Logo' src={logo} alt="Logo" />
 
-            </div>
-            <div className="container m-auto py-6 flex justify-center items-center">
-                <nav className="flex gap-5">
-                    <NavLinks href={"#"} text={"Enalce 1"}/>
-                    <NavLinks href={"#"} text={"Enalce 2"}/>
-                    <NavLinks href={"#"} text={"Enalce 3"}/>
-                </nav>
-                <CartWidget />
-            </div>
-        </header>
+                </div>
+                
+                <div className="container m-auto py-6 flex justify-center items-center">
+                    
+                    <nav className="flex gap-5">
+                        <NavLinks href={"#"} text={"PROMOCIONES"}/>
+                        <NavLinks href={"#"} text={"REMERAS"}/>
+                        <NavLinks href={"#"} text={"CONTACTO"}/>
+                    </nav>
+                    
+                </div>
+                
+            </header>
+        </div>
     )
 }
 
