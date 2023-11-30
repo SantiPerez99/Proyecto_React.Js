@@ -5,9 +5,9 @@ import products from '../Productos/productosData';
 const ItemListcontainer = () => {
 
     return (
-      <div className="items-list-container">
-        <h2 className='text-4xl font-bold text-center text-red-500 mb-4 mt-8 shadow-md border'>Productos</h2>
+      <div className="bg-gray-400 items-list-container ">
         <br />
+        <h2 className='text-6xl font-bold text-center text-red-500 shadow-xl border-black' style={{fontFamily: 'Grafitti'}}>Productos</h2>
         <div className="products-list flex flex-wrap justify-center">
           {products.map((product) => (
             <Product key={product.id} product={product} />

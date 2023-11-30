@@ -5,33 +5,33 @@
 const products = [
     { 
       id: 1, 
-      name: 'Producto 1', 
+      name: 'O n e - M o r e', 
       price: 12, 
-      image: 'url_de_la_imagen_1.jpg' 
+      image: '../src/assets/Remera-Negra-One-More.png' 
     },
     { 
       id: 2, 
-      name: 'Producto 2', 
+      name: 'O n e - M o r e', 
       price: 30, 
-      image: 'url_de_la_imagen_2.jpg' 
+      image: '../src/assets/Remera-Negra-One-More-Back.png' 
     },
     { 
         id: 3, 
-        name: 'Producto 3', 
+        name: 'O n e - M o r e', 
         price: 12, 
-        image: 'url_de_la_imagen_1.jpg' 
+        image: '../src/assets/Remera-GrisBlack-One-More.png' 
       },
       { 
         id: 4, 
-        name: 'Producto 4', 
+        name: 'O n e - M o r e', 
         price: 30, 
-        image: 'url_de_la_imagen_2.jpg' 
+        image: '../src/assets/Remera-GrisWhite-One-More.png' 
       },
       { 
         id: 5, 
-        name: 'Producto 5', 
+        name: 'O n e - M o r e', 
         price: 30, 
-        image: 'url_de_la_imagen_2.jpg' 
+        image: '../src/assets/Remera-GrisGastado-One-More.png' 
       },
   ];
 

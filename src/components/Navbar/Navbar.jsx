@@ -19,10 +19,10 @@ const Navbar = () => {
                 
                 <div className="container m-auto py-6 flex justify-center items-center">
                     
-                    <nav className="flex gap-5">
-                        <NavLinks href={"#"} text={"PROMOCIONES"}/>
-                        <NavLinks href={"#"} text={"REMERAS"}/>
-                        <NavLinks href={"#"} text={"CONTACTO"}/>
+                    <nav className="flex gap-5" style={{fontFamily: 'Clothing ,sans-serif'}} >
+                        <NavLinks href={"#"} text={"P R O M O C I O N E S"}/>
+                        <NavLinks href={"#"} text={"R E M E R A S"}/>
+                        <NavLinks href={"#"} text={"C O N T A C T O"}/>
                     </nav>
                     
                 </div>

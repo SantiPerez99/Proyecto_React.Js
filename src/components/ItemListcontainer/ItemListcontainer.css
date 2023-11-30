@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: 'Grafitti' ;
+    src: url(../../assets/fonts/sprite-graffiti-regular.ttf);
+}
 
 
 .List__container{
