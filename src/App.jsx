@@ -10,12 +10,13 @@ import ItemListcontainer from './components/ItemListcontainer/ItemListcontainer'
 
 function App() {
   
+  const greetingMensaje = "P r o d u c t o s"
 
   return (
     <>     
      <Navbar />
      
-     <ItemListcontainer />
+     <ItemListcontainer greeting={greetingMensaje} />
      
     </>
   )

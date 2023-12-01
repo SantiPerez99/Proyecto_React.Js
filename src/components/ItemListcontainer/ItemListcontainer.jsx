@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 
 
-const ItemListcontainer = () => {
+const ItemListcontainer = ({ greeting }) => {
 
   const [productos, setproductos] = useState([])
   
@@ -25,7 +25,8 @@ const ItemListcontainer = () => {
     return (
       <div className="bg-gray-400 items-list-container ">
         <br />
-        <h2 className='text-6xl font-bold text-center text-red-500 shadow-xl border-black' style={{fontFamily: 'Grafitti'}}>Productos</h2>
+        
+        <h2 className='text-6xl font-bold text-center text-red-500 shadow-xl border-black' style={{fontFamily: 'Grafitti'}}>{greeting}</h2>
         <div className="products-list flex flex-wrap justify-center">
           {productos.map((product) => (
             <Product key={product.id} product={product} />
