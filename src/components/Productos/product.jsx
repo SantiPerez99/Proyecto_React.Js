@@ -10,7 +10,7 @@ const Product = ({ product }) => {
         <img src={image} alt={name} className="w-full h-auto mb-4" />
         <h3 className="text-lg font-semibold mb-2 text-gray-600" style={{fontFamily : 'Grafitti, san-serif'}}>{name}</h3>
         <p className="text-gray-600">Precio: ${price}</p>
-        
+        <button>Comprar</button>
       </div>
     );
   };
