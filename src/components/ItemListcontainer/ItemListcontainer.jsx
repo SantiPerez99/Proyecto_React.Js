@@ -1,26 +1,11 @@
 import './ItemListcontainer.css'
 import Product from '../Productos/product';
-//import products from '../Productos/productosData';
-import { pedirDatos } from '../utilidades/utilidades';
-import { useState } from 'react';
-import { useEffect } from 'react';
-
+import useProductos from '../CustomHook/useProductos';  //VER CLASE 08 PARA HACER UN CUSTOMHOOK CON LOS PRODUCTOS
 
 
 const ItemListcontainer = ({ greeting }) => {
 
-  const [productos, setproductos] = useState([])
-  
-  useEffect(() => {
-    pedirDatos()
-      .then((data) => {
-        setproductos(data)
-      })
-
-  },[])
-
-
-
+  const {productos} = useProductos()
 
     return (
       <div className="bg-gray-400 items-list-container ">

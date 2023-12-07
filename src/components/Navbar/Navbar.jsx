@@ -33,4 +33,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-// terminar de ver after clas 1.01 
