@@ -1,5 +1,4 @@
-import products from "../Productos/productosData"
-
+import products from "../Productos/productsData"
 
 export const pedirDatos = () => {
 
@@ -7,7 +6,7 @@ export const pedirDatos = () => {
         setTimeout(() =>[
             resolve(products)
 
-        ],2000)        
+        ],1000)        
 
     })        
 }

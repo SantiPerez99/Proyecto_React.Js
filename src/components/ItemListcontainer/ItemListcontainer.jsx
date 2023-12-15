@@ -1,12 +1,16 @@
 import './ItemListcontainer.css'
 import Product from '../Productos/product';
 import useProductos from '../CustomHook/useProductos';  //VER CLASE 08 PARA HACER UN CUSTOMHOOK CON LOS PRODUCTOS
-
+import { useParams } from 'react-router-dom';
 
 const ItemListcontainer = ({ greeting }) => {
 
-  const {productos} = useProductos()
+  const {categoryId} = useParams()
+  const {productos} = useProductos(categoryId)
+  
 
+  
+  
     return (
       <div className="bg-gray-400 items-list-container ">
         <br />
