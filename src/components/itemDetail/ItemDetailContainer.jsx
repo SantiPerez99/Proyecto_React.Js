@@ -23,13 +23,19 @@ const ItemDetailContainer = () => {
     }, [itemId]); 
 
     return (
-        <div className="bg-gray-400 items-list-container ">
+        <div className="bg-gray-400 items-list-container min-h-screen justify-center items-center ">
             {loading ? (
                 <p>Cargando...</p>
             ) : (
-                <>
-                    <h2 className='text-6xl font-bold text-center text-red-500 shadow-xl border-black' style={{fontFamily: 'Grafitti'}}>Detalles del Item</h2>
-                    <ItemDetail item={item} />
+                <>  <div className="text-center justify-center">
+                        <h2 className='text-6xl font-medium text-center text-red-500 shadow-xl border-black' style={{ fontFamily: 'Grafitti'}}>
+                        {item ? item.category : 'Detalles del Item'}
+                        </h2>
+                        <div className="flex justify-center">
+                            <ItemDetail item={item} />
+                        </div>               
+                    </div>
+                    
                 </>
             )}
         </div>

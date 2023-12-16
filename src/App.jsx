@@ -8,7 +8,7 @@ import Promociones from './components/Promociones/promociones'
 import Contacto from './components/Contacto/contacto'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import ItemDetailContainer from './components/itemDetail/itemdetailcontainer'
-
+import Footer from './components/Footer/footer'
 
 function App() {
   
@@ -34,7 +34,7 @@ function App() {
             <Route path="*" element={ <Navigate to={"/not-found"}/> }/> 
         </Routes>
 
-        <footer />
+        <Footer />
   
       </BrowserRouter>
      

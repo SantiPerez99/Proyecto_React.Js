@@ -14,7 +14,7 @@ const Navbar = () => {
         
             <header className="bg-gray-600">
                 
-            <div className="container m-auto py-6 flex justify-center items-center">
+            <div className="container m-auto py-8 flex justify-center items-center">
              <Link to="/">
                 <img className='Imagen__Logo' src={logo} alt="Logo" />
              </Link>
@@ -24,7 +24,7 @@ const Navbar = () => {
 
                     <nav className="flex gap-5" style={{fontFamily: 'Clothing ,sans-serif'}} >
                         <Link 
-                        className="text-white text-lg uppercase font-semiBold px-8 hover:text-red-500" to={"/promociones"}>
+                        className="text-white text-lg uppercase font-semiBold px-8 hover:text-red-500" to={"/"}>
                             P R O M O C I O N E S
                         </Link> 
                         <DropdownMenu />
