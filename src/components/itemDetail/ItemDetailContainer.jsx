@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
     return (
         <div className="bg-gray-400 items-list-container min-h-screen justify-center items-center ">
             {loading ? (
-                <p>Cargando...</p>
+                <p className="text-6xl font-medium text-center text-red-500 shadow-xl border-black'" style={{ fontFamily: 'Grafitti'}}>Cargando...</p>
             ) : (
                 <>  <div className="text-center justify-center">
                         <h2 className='text-6xl font-medium text-center text-red-500 shadow-xl border-black' style={{ fontFamily: 'Grafitti'}}>
