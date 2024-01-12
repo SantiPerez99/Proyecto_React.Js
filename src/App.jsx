@@ -5,10 +5,11 @@ import ItemListcontainer from './components/ItemListcontainer/ItemListcontainer'
 import Promociones from './components/Promociones/promociones'
 import Contacto from './components/Contacto/contacto'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import ItemDetailContainer from './components/itemDetail/itemdetailcontainer'
+import ItemDetailContainer from './components/itemDetail/ItemDetailContainer'
 import Footer from './components/Footer/footer'
 import { CartContext, CartProvider } from './context/CartContext'
 import CartView from './components/CartView/CartView'
+import Checkout from './components/checkout/Checkout'
 
 
 
@@ -33,6 +34,7 @@ function App() {
               <Route path="/promociones" element={ <Promociones /> }  />
               <Route path="/contacto" element={ <Contacto /> }  />
               <Route path="/cart" element={<CartView />} />
+              <Route path="/checkout" element={<Checkout />} />
 
               <Route path="/not-found" element={ <h1>NOT FOUND</h1> }/> 
               <Route path="*" element={ <Navigate to={"/not-found"}/> }/> 

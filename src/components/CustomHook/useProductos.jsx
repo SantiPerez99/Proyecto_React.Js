@@ -1,3 +1,4 @@
+/*
 import { pedirDatos } from "../utilidades/utilidades"
 import { useEffect } from "react"
 import { useState } from "react"
@@ -25,3 +26,4 @@ const useProductos = (categoryId) =>{
     
 }
 export default useProductos
+*/

@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
+import { calcularTotalCompra } from '../../context/totalcompra';
+
 
 const CartView = () => {
     const {cart, RemoveItem} = useContext(CartContext)
     const handleRemoveItem = (itemId) => {
         RemoveItem(itemId);
       };
-      const totalCompra = cart.reduce((total, item) => {
-        return total + (item.price * item.cantidad);
-    }, 0);
+      const totalCompra = calcularTotalCompra(cart);
     return (
 
         <section className="container mx-auto p-4">
@@ -30,7 +31,9 @@ const CartView = () => {
             </div>
         <div className="mt-8 text-right">
             <p className="text-xl font-bold">Total: ${totalCompra.toFixed(2)}</p>
+            <Link to= "/Checkout">
             <button className="bg-green-500 text-white px-5 py-2 rounded mt-4 hover:bg-green-600">Finalizar Compra</button>
+            </Link>
         </div>
     </section>
 

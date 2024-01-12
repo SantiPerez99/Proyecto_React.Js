@@ -1,29 +1,51 @@
-import './ItemListcontainer.css'
+import './ItemListcontainer.css';
 import Product from '../Productos/product';
-import useProductos from '../CustomHook/useProductos';  //VER CLASE 08 PARA HACER UN CUSTOMHOOK CON LOS PRODUCTOS
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../../firebase/config';
 
 const ItemListcontainer = ({ greeting }) => {
+  const { categoryId } = useParams();
+  const [productos, setProductos] = useState([]);
 
-  const {categoryId} = useParams()
-  const {productos} = useProductos(categoryId)
-  
+  useEffect(() => {
+    
 
-  
-  
-    return (
-      <div className="bg-gray-400 items-list-container ">
-        <br />
+    // 1.- Armar una referencia (sync)
+    const productosRef = collection(db, 'Productos')
+    const docsRef = categoryId
+                      ? query( productosRef, where('category', '==', categoryId))
+                      : productosRef
+    // 2.- LLamar a esa referencia (async)
+    getDocs(docsRef)
+      .then((querySnapshot) => {
+        const docs = querySnapshot.docs.map(doc => {
+          return {
+            ...doc.data(),
+            id: doc.id
+          }
+        })
         
-        <h2 className='text-6xl font-bold text-center text-red-500 shadow-xl border-black' style={{fontFamily: 'Grafitti'}}>{greeting}</h2>
-        <div className="products-list flex flex-wrap justify-center">
-          {productos.map((product) => (
-            <Product key={product.id} product={product} />
-          ))}
-        </div>
-      </div>
-    );
-  };
+        console.log( docs )
+        setProductos( docs )
+      })
+      .finally()
 
-export default ItemListcontainer
+}, [categoryId])
+
+  return (
+    <div className="bg-gray-400 items-list-container ">
+      <br />
+      <h2 className='text-6xl font-bold text-center text-red-500 shadow-xl border-black' style={{ fontFamily: 'Grafitti' }}>{greeting}</h2>
+      <div className="products-list flex flex-wrap justify-center">
+        {productos.map((product) => (
+          <Product key={product.id} product={product} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default ItemListcontainer;
 
