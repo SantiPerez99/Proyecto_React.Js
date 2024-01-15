@@ -5,7 +5,7 @@ import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
     return (
-      <footer className="bg-gray-800 text-white py-4 text-center">
+      <footer className="bg-black text-white py-4 text-center">
         <p>&copy; 2023 One-More. Todos los derechos reservados.</p>
 
         <div className="mt-2 flex justify-center">

@@ -35,9 +35,9 @@ const ItemListcontainer = ({ greeting }) => {
 }, [categoryId])
 
   return (
-    <div className="bg-gray-400 items-list-container ">
-      <br />
-      <h2 className='text-6xl font-bold text-center text-red-500 shadow-xl border-black' style={{ fontFamily: 'Grafitti' }}>{greeting}</h2>
+    <div className="bg-gray-800 items-list-container ">
+      <h2 className='text-3xl font-bold text-center text-white shadow-xl border-black' style={{ fontFamily: 'Race' }}>{categoryId}</h2>
+      <h2 className='bg-gray-800 p-2 text-3xl font-bold text-center text-white shadow-xl border-black' style={{ fontFamily: 'Race' }}>{greeting}</h2>
       <div className="products-list flex flex-wrap justify-center">
         {productos.map((product) => (
           <Product key={product.id} product={product} />

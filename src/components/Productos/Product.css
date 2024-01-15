@@ -1,0 +1,17 @@
+/* Product.css */
+/* Cuando el contenedor está en estado de hover, muestra el overlay */
+.product-container:hover .product-overlay {
+  opacity: 1;
+  transition: opacity 0.3s ease; /* Añadir una transición suave de 0.3 segundos */
+}
+
+/* Cuando el contenedor está en estado de hover, oscurece la imagen */
+.product-container:hover .product-image {
+  filter: brightness(0.7);
+  transition: filter 0.3s ease; /* Añadir una transición suave de 0.3 segundos */
+}
+.product-container:hover .product-overlay {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out; /* Ajusta la duración y la función de temporización */
+}
+  

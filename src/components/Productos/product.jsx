@@ -1,22 +1,38 @@
-
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-
+import './Product.css';
 
 const Product = ({ product }) => {
-    const { id, name, price, image } = product;
-    
-  
-    return (
-      <div key={id} className="border-black rounded-lg overflow-hidden shadow-xl p-4 w-64 m-4">
-        <img src={image} alt={name} className="w-full h-auto mb-4" />
-        <h3 className="text-lg font-semibold mb-2 text-gray-600" style={{fontFamily : 'Grafitti, san-serif'}}>{name}</h3>
-        <p className="text-gray-600">Precio: ${price}</p>
-        <Link to={`/item/${product.id}`} className="bg-red-400 block w-full text-center py-2 text-white rounded hover:bg-red-500">
-        Ver más
+  const { id, name, price, image } = product;
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div className="text-center m-4 relative product-container">
+      <Link to={`/item/${product.id}`}>
+        <div
+          className="max-w-full h-auto mb-4 rounded-lg product-image-container"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-auto rounded-lg product-image"
+          />
+          {hovered && (
+            <div className="absolute inset-0 bg-black bg-opacity-75 transition-opacity duration-300 flex flex-col justify-center items-center product-overlay">
+              <h3 className="text-lg font-semibold mb-2 text-white" style={{ fontFamily: 'Race, san-serif' }}>{name}</h3>
+              <p className="text-white">Precio: ${price}</p>
+            </div>
+          )}
+        </div>
       </Link>
-      </div>
-    );
-  };
-  
-  export default Product;
+    </div>
+  );
+};
+
+export default Product;
+
+
+
+

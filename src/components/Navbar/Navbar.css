@@ -2,6 +2,11 @@
     font-family: 'Clothing';
     src: url(../../assets/fonts/Quicksand-VariableFont_wght.ttf);
 }
+@font-face {
+    font-family: 'Race';
+    src: url(../../assets/fonts/SwipeRaceDemo.ttf);
+}
+
 
 
 

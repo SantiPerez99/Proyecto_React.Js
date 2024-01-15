@@ -68,41 +68,44 @@ const Checkout = () => {
                     setOrderId(doc.id)
                     ClearCart()
 
-                    Swal.fire("Compra finalizada con exito!")
-                })
-            })
+                    Swal.fire({
+                        icon: 'success',
+                        title: '¡Compra finalizada con éxito!',
+                        text: `Tu código de compra es: ${doc.id}`
+                    }) .then(() => {
+                        setTimeout(()=> {
+                            window.location.href = '/'
+                        },1500);
+                    });
+                });
+            });
         } else {
-            Swal.fire("Hay items sin stock")
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Hay items sin stock'
+            })
         }
 
     };    
 
-    if (orderId){
-
-        return(<div>
-            <h2>GRACIAS POR TU COMPRA</h2>
-            <p>Tu codigo de compra es: {orderId}</p>
-        </div>);
-        
-    };
 
 
 
     return (
         <section className="bg-gray-600">
             <div className=" max-w-3xl mx-auto p-6 bg-gray-200 rounded-lg shadow-lg">
-                <h2 className="text-center">Checkout</h2>
+                <h2 className="text-center text-xl"style={{fontFamily: 'Clothing ,sans-serif'}}>INGRESA TUS DATOS PARA GENERAR LA ORDEN DE COMPRA</h2>
                 <hr />
                 <div className="m-6 grid grid-cols-1 gap-4">
                     <form onSubmit={handleSubmit}>
                         <div className="border-b pb-4">
-                            <label htmlFor="nombre" className="text-lg">
+                            <label htmlFor="nombre" className="text-lg"style={{fontFamily: 'Clothing ,sans-serif'}}>
                                             Nombre:
                             </label>
                             <input 
                             type="text" 
-                            id="nombre" 
-                            name="nombre" 
+                            id="nombre"  
                             className="block w-full border-gray-300 rounded-md mt-1"
                             onChange={handleInputChange}
                             value={values.Nombre}
@@ -110,13 +113,12 @@ const Checkout = () => {
                             />
                         </div>
                         <div className="border-b pb-4">
-                            <label htmlFor="email" className="text-lg">
+                            <label htmlFor="email" className="text-lg"style={{fontFamily: 'Clothing ,sans-serif'}}>
                                             Email:
                             </label>
                             <input 
                             type="email" 
-                            id="email" 
-                            name="email" 
+                            id="email"  
                             className="block w-full border-gray-300 rounded-md mt-1"
                             onChange={handleInputChange}
                             value={values.Email}
@@ -124,13 +126,12 @@ const Checkout = () => {
                             />
                         </div>
                         <div className="border-b pb-4">
-                            <label htmlFor="email" className="text-lg">
+                            <label htmlFor="email" className="text-lg"style={{fontFamily: 'Clothing ,sans-serif'}}>
                                             Direccion de envio:
                             </label>
                             <input 
                             type="text" 
-                            id="email" 
-                            name="email" 
+                            id="email"  
                             className="block w-full border-gray-300 rounded-md mt-1"
                             onChange={handleInputChange}
                             value={values.Direccion}
