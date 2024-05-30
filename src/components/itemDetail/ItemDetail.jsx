@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import Boton from "../utilidades/Boton";
+import Boton from "../utilidades/boton";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
